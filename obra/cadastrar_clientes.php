@@ -1,3 +1,10 @@
+
+<?php 
+ include '/xamppp/htdocs/obra/back/index_codigo.php';
+?>
+
+
+
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en" class="theme-dark">
   <head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
   <script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
@@ -75,6 +82,24 @@
   input[type="text"] {
       width: 380px; /* Defina a largura desejada em pixels */
   }
+  
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-success {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+        .alert-danger {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+    
   
 </style>
   
@@ -382,41 +407,27 @@
 
             
 
-            <form id="employee-form" style="padding: 10px; ">
+            <form method="post" id="employee-form" action="back/cadastro_cliente.php" style="padding: 10px; ">
 
             
               <label for="nome">Nome Completo:</label>
               <input type="text" style="color: black;" id="nome" name="nome" required><br><br>
       
-              <label for="funcao">Placa Do Carro:</label>
-              <input type="text" style="color: black;" id="funcao" name="funcao" required><br><br>
+              <label for="placa">Placa Do Carro:</label>
+              <input type="text" style="color: black;" id="placa" name="placa" required><br><br>
 
-              <label for="chave-pix">Carro:</label>
-              <input type="text" style="color: black;" id="chave-pix" name="chave-pix" required><br><br>
+              <label for="carro">Carro:</label>
+              <input type="text" style="color: black;" id="carro" name="carro" required><br><br>
       
-              <label for="rg/cpf">RG ou CPF:</label>
-              <input type="text" style="color: black;" id="rg/cpf" name="rg/cpf" required><br><br> 
+              <label for="CPF">RG ou CPF:</label>
+              <input type="text" style="color: black;" id="rg/cpf" name="rg/cpf" required><br><br>
+
       
               <button type="submit" class="btn-fut" > Cadastrar Cliente</button>
           </form>
-      
-          <div id="employee-list">
-              <!-- Aqui você pode exibir a lista de funcionários cadastrados -->
-          </div>
-      
-          <!-- <script>
-              // Adicione o JavaScript para processar o formulário e exibir funcionários cadastrados aqui
-              document.getElementById("employee-form").addEventListener("submit", function(event) {
-                  event.preventDefault();
-                  const nome = document.getElementById("nome").value;
-                  const funcao = document.getElementById("funcao").value;
-                  const diaria = document.getElementById("diaria").value;
-                  const chavePix = document.getElementById("chave-pix").value;
-      
-                  // Aqui você pode enviar os dados para um servidor ou armazená-los localmente
-                  // e exibir a lista de funcionários cadastrados no elemento "employee-list"
-              });
-          </script> -->
+          
+        
+        
 
 
 
